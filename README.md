@@ -24,6 +24,9 @@ then
 
 open the browser and run this commant localhost:3000 
 
+email --> admin@gmail.com
+pass --> admin@123
+
 
 
 
