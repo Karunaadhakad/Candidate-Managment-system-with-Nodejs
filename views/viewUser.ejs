@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body>
+    <%if(mess){%>
+  <div class="modal" id="messageModal">
+    <div class="modal-content">
+      <p><%= mess %></p>
+      <button class="close-btn" onclick="document.getElementById('messageModal').style.display='none'">Close</button>
+    </div>
+  </div>
+<%}%>
+
+    
+    <div clas="nav_box">
+        <h3 style="color: black">User List</h3>
+ 
+         <nav class="nav">
+            <center>
+                <ul>
+                    <li><a href="/user/dashboard">Dashboard</a></li>
+                    <li><a href="/user/viewUser">Users</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Feedback</a></li>
+                     <li>
+                        <form action="/user/search" method="post">
+                               <input type="text" name="search" placeholder="Search user..." required />
+                                <button type="submit">Search</button>
+                        </form>
+                     </li>
+                </ul>  
+            </center>   
+         </nav>
+    </div>
+
+    <div class="add_btn">
+        <button ><a href="/user/addUser">Add User</a></button>
+    </div>
+    
+          
+    <div class="user_data">
+     <center>
+      <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+             <tr>
+                <th rowspan="2">S.No</th>
+                <th rowspan="2">Username</th>
+                <th rowspan="2">Email</th>
+                <th rowspan="2">Password</th>
+                <th rowspan="2">address</th>
+                <th rowspan="2">userImage</th>
+                <th colspan="2">Action</th>
+            </tr>
+            <tr>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                 <% (findUser && findUser.length > 0 ? findUser : userData).forEach((user,index) => { %>
+
+
+                <tr>
+                    <td><%= index+1 %></td> 
+                    <td><%= user.username%></td>           
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td><%= user.address %></td>
+                     <td>
+                    <img src="/images/<%=user.myImage%>" alt="" height="30" width="50">
+                    <a href="/images/<%=user.myImage%>" download>Click to download</a>
+                    </td>
+                    <td><a href="/user/update/<%= user.email%>">Update</a></td>
+                    <td><a href="/user/delete/<%= user.email%>">Delete</a></td>
+                    
+                </tr>
+           <% })%>
+        </tbody>
+     </table>
+</center>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        input{
+            height: 30px;
+            width: 300px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>  
+<center>
+    <span style="color: green;"><%=mess%></span>
+    <form action="/user/updateUser" method="post" enctype="multipart/form-data">
+        <table>
+            <caption><h1>Update User </h1></caption>
+            <thead>
+                <tbody>
+                    <tr>
+                       
+                        <td>
+                            Username <br>
+                            <input type="text" placeholder="Enter Username" name="username" value="<%= user.username %>">
+                            </td>
+                    </tr>
+                    <tr>
+                       
+                        <td>
+                            Email <br>
+                            <input type="email" placeholder="Enter Email" name="email" value="<%= user.email %>" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <td>
+                            Password <br>
+                            <input type="password" placeholder="Enter Password" name="password" value="<%= user.password %>">
+                
+                    </tr>
+                    <tr>
+                       
+                        <td>
+                            Address <br>
+                            <textarea  placeholder="Enter Address" name="address" cols="40" rows="3" ><%= user.address %></textarea>
+                
+                    </tr>
+                    <tr>
+                       
+                        <td>
+                                                  <label>Current Image:</label><br>
+                                                  <img src="/images/<%= user.myImage %>" width="100" /><br>
+                                                  <label>New Image:</label>
+                                                  <input type="file" name="myImage" id="file"><br>                                           
+                           
+                        </td>
+
+                    </tr>
+                       
+                    <tr>
+                        <td><input type="submit" value="Update"><br>
+                        <input type="reset" value="Reset"></td> 
+                        
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </form>
+   
+</center>
+</body>
+</html>
+
+
+
+
+
