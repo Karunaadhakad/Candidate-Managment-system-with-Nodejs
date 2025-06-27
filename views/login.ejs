@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: #fff0f5;
+      padding: 40px 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      color: #ad1457;
+      font-size: 26px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0 22px;
+      border: 1px solid #e1bee7;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: border 0.3s;
+      background-color: #fff;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #ec407a;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(to right, #ec407a, #f06292);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #d81b60, #e91e63);
+      transform: translateY(-1px);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 14px;
+      color: #8e44ad;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>🌸 Admin Login</h2>
+    <form action="/login" method="POST">
+      <input type="email" name="email" placeholder="email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="footer">© 2025 YourAppName. All rights reserved.</div>
+  </div>
+</body>
+</html>
